@@ -1,0 +1,55 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+    
+
+        {
+            "name": "preprocess",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "--opt", "preprocess", 
+                "--conf", "/Users/hwang/Projects/Montage/conf/conf-hw.json"
+            ],
+            "cwd": "${fileDirname}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "train",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "--opt", "train", 
+                "--conf", "/Users/hwang/Projects/Montage/conf/conf-hw.json"
+            ],
+            "cwd": "${fileDirname}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "build_map",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "--opt", "build_map", 
+                "--conf", "/Users/hwang/Projects/Montage/conf/conf-hw.json"
+            ],
+            "cwd": "${fileDirname}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "generate",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "--opt", "generate", 
+                "--conf", "/Users/hwang/Projects/Montage/conf/conf-hw.json"
+            ],
+            "cwd": "${fileDirname}",
+            "console": "integratedTerminal"
+        },
+    ]
+}
