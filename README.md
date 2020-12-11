@@ -1,4 +1,9 @@
-Forked from WSP-LAB/Montage & modified loss function to get more versatile model outputs & added "generate" mode to generate .js files without fuzzing. Tested with python 3.8.
+Forked from WSP-LAB/Montage, with the following modifications:
+1. modified loss function to get more versatile model outputs 
+1. added "generate" mode to generate .js files without fuzzing
+1. various minor changes, non-gpu mode, test_frac, etc.
+
+Tested with python 3.8.
 
 Installation:
 1. Code-to-AST needs Esprima, and AST-to-Code Escodegen. In case of getting no output at all: try installing the above packages inside Mongage/ (the project root), as well as src/.
@@ -11,20 +16,11 @@ npm install esprima@4.0.0 escodegen@1.9.1
 conda install pytorch torchvision -c pytorch
 ```
 
-4. To generate js files with pre-trained models:
-```
-cd Montage/src/
-python main.py --opt generate --conf {conf_path}
-```
+3. To fuzz against ChakraCore, download ChakraCore bin file from: https://github.com/microsoft/ChakraCore/releases
 
-4.1 Other run modes:
---opt preprocess: files in js-test-suite/ are read in this step. Generate data files under data/: data.p, seed.p, train_data.p.
---opt train: train & write model to data/models/
---opt build_map: read in ast files and produce definition name to file name mapping (where to find these definitions)
---opt fuzz: generate js files from randomly selected seed file, fuzz with them.
-E.g., to fuzz against ChakraCore, download ChakraCore bin file from: https://github.com/microsoft/ChakraCore/releases
+4. To generate js files: Check out src/driver.ipynb
 
-In case there are problems:
+Possible problems:
 - Ref: https://stackoverflow.com/questions/54536539/unicodeencodeerror-utf-8-codec-cant-encode-character-ud83d-in-position-38
 
 # Montage
